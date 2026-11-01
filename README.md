@@ -1,8 +1,8 @@
 # CPro Project — Monsoon 2026
   
 ### Student Details
-- **Name:** {name}
-- **Roll Number:** {roll_no}
+- **Name:** Siddhant Jain
+- **Roll Number:** 2026101029
   
 ---
 

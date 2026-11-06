@@ -11,7 +11,7 @@ int input(Action *action) {
     char command;
     int row, col;
 
-    printf("Enter action (M row col / W H row col / W V row col): ");
+    printf("Enter move (M row col or W H row col or W V row col)");
 
     if (scanf(" %c", &command) != 1) 
     {

@@ -12,7 +12,8 @@ void player_init(Player *player, int row, int col) {
     player->pos.row = row;
     player->pos.col = col;
 
-    player->walls_remaining = MAX_WALLS;
+    player->walls_remainingHor= 5;
+    player->walls_remainingVert= 5;
 }
 
 // readyplayertwo

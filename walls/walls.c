@@ -18,11 +18,11 @@ int walls_valid_placement(const Game *game, char orientation, int row, int col) 
         return 0;
     }
     // Check available walls
-    if (game->players[game->curr_player].walls_remaining <= 0)
+    if (game->players[game->curr_player].walls_remainingHor <= 0 && game->players[game->curr_player].walls_remainingVert <= 0)
     {
         return 0;
     }
-    if (orientation == 'H') 
+    if (orientation == 'H' && game->players[game->curr_player].walls_remainingHor > 0) 
     {
 
         // Check overlapping horizontal walls
@@ -35,7 +35,7 @@ int walls_valid_placement(const Game *game, char orientation, int row, int col) 
         {
             return 0;
         }
-    }else if (orientation == 'V') 
+    }else if (orientation == 'V' && game->players[game->curr_player].walls_remainingVert > 0) 
     {
         // Check overlapping vertical walls
         if (game->walls.vertical[row][col] ||game->walls.vertical[row + 1][col])
@@ -52,6 +52,7 @@ int walls_valid_placement(const Game *game, char orientation, int row, int col) 
     {
         return 0;
     }
+    //if error
     return 1;
 }
 
@@ -70,14 +71,13 @@ int walls_place(Game *game, char orientation, int row, int col) {
     {
         game->walls.horizontal[row][col] = 1;
         game->walls.horizontal[row][col + 1] = 1;
+        (game->players[game->curr_player].walls_remainingHor)--;
     }
     else if (orientation == 'V')
     {
         game->walls.vertical[row][col] = 1;
         game->walls.vertical[row + 1][col] = 1;
+        (game->players[game->curr_player].walls_remainingVert)--;
     }
-
-    (game->players[game->curr_player].walls_remaining)--;
-
     return 1;
 }

@@ -16,21 +16,25 @@ void dispBoard(const Game *game) {
         {
             char cell = '.';
 
-            if (game->players[0].pos.row == row &&
-                game->players[0].pos.col == col)
+            if (game->players[0].pos.row == row && game->players[0].pos.col == col)
+            {
                 cell = '1';
-
-            else if (game->players[1].pos.row == row &&
-                     game->players[1].pos.col == col)
+            }else if (game->players[1].pos.row == row && game->players[1].pos.col == col)
+            {
                 cell = '2';
+            }
 
             printf(" %c ", cell);
 
-            if (col < SIZE - 1) {
+            if (col < SIZE - 1) 
+            {
                 if (row < 8 && game->walls.vertical[row][col])
+                {
                     printf("|");
-                else
+                }else
+                {
                     printf(" ");
+                }
             }
         }
 
@@ -56,9 +60,11 @@ void dispBoard(const Game *game) {
         }
     }
 
-    printf("\nPlayer 1 walls remaining: %d\n", game->players[0].walls_remaining);
+    printf("Player 1 horizontal walls remaining: %d\n", game->players[0].walls_remainingHor);
+    printf("Player 1 vertical walls remaining: %d\n", game->players[0].walls_remainingHor);
 
-    printf("Player 2 walls remaining: %d\n", game->players[1].walls_remaining);
+    printf("Player 2 horizontal walls remaining: %d\n", game->players[1].walls_remainingHor);
+    printf("Player 2 vertical walls remaining: %d\n", game->players[1].walls_remainingVert);
 }
 
 void dispTurn(const Game *game) {

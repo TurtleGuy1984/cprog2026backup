@@ -55,13 +55,6 @@ int main(void) {
             }
         }
 
-        if (win(&game, game.curr_player)) 
-        {
-            dispBoard(&game);
-            printf("Congratulations player %d, u is win!  :D\n", game.curr_player + 1);
-            break;
-        }
-
         myturn(&game);
     }
 

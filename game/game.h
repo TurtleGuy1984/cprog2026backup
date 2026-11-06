@@ -14,7 +14,8 @@ typedef struct {
 // Represents a player
 typedef struct {
     Position pos;
-    int walls_remaining;
+    int walls_remainingVert;
+    int walls_remainingHor;
 } Player;
 
 // Represents all walls on the board

@@ -19,8 +19,10 @@ void game_init(Game *game) {
     game->players[1].pos.col = 4;
 
     // Give each player 10 walls
-    game->players[0].walls_remaining = MAX_WALLS;
-    game->players[1].walls_remaining = MAX_WALLS;
+    game->players[0].walls_remainingVert = 5;
+    game->players[0].walls_remainingHor = 5;
+    game->players[1].walls_remainingHor = 5;
+    game->players[1].walls_remainingVert = 5;
 
     // Player 1 starts
     game->curr_player = 0;
@@ -30,20 +32,4 @@ void game_init(Game *game) {
 void myturn(Game *game) 
 {
     game->curr_player = 1 - game->curr_player;
-}
-
-// Check winning condition
-int win(const Game *game, int player) {
-
-    if (player == 0) 
-    {
-        return game->players[0].pos.row == SIZE - 1;
-    }
-
-    if (player == 1) 
-    {
-        return game->players[1].pos.row == 0;
-    }
-
-    return 0;
 }

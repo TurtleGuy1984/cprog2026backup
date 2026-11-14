@@ -6,7 +6,7 @@
 
 #include "game.h"
 
-// Initialize the game
+// Welcome to the game
 void game_init(Game *game) {
 
     memset(game, 0, sizeof(Game));
@@ -27,6 +27,8 @@ void game_init(Game *game) {
     // Player 1 starts
     game->curr_player = 0;
 }
+
+
 
 // Switch turns
 void myturn(Game *game) 

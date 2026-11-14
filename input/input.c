@@ -19,7 +19,11 @@ int input(Action *action) {
     }
 
     command = toupper(command);
-
+    if (command == 'X')
+    {
+        action->type = QUIT;
+        return 1;
+    }
     if (command == 'M') 
     {
         if (scanf("%d %d", &row, &col) != 2) 

@@ -16,7 +16,14 @@ int main(void) {
     int result;
     int inf  = 42;
     game_init(&game);
-
+    /*for (int col = 0; col < 9; col++) 
+    {
+        game.walls.horizontal[0][col] = 1;
+    }
+    printf("Player 1 path: %d\n", path_exists(&game, 0));
+    printf("Player 2 path: %d\n", path_exists(&game, 1));
+    minor testing of the BFS path search...it works so far
+    */
     while (inf==42) 
     {
         dispBoard(&game);
@@ -35,7 +42,11 @@ int main(void) {
             printf("Bad input >:( Redo\n");
             continue;
         }
-
+        if (action.type == QUIT) 
+        {
+            printf("\nRincewind gazed upon the vast, incomprehensible board before him.\nThen, deciding that it was probably best left incomprehensible, he turned on his heel and legged it.\n");
+            break;
+        }
         if (action.type == MOVE) 
         {
             if (!valmove(&game, action.row, action.col)) 

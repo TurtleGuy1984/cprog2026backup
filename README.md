@@ -28,8 +28,8 @@ all the .c files aside from main.c are basically their own relevant functions wi
 Used ctype.h to be able to accept lower as well as upper case input.
 Ive opted to keep all the headers with their own functions as of now. It makes it easier to change things right now.
 
-Dear person reading this, 
-I have done my best to keep this project and its code neat. It's not much, but it's honest work.
+PHASE 2:
+Determining valid wall placement while checking if there is still a path to the other player's line thing using Breadth first search.
 There are two possible actions. Move (M) or place Wall (W). When plaving a wall, you must specify Horizontal (H) or Vertical (V). The last bit of info is the coords (obvi). 
 Example:
 M 1 4

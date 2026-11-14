@@ -2,9 +2,6 @@
 #ifndef GAME_H
 #define GAME_H
 
-#define SIZE 9
-#define MAX_WALLS 10
-
 // Represents a position on the board
 typedef struct {
     int row;
@@ -20,8 +17,8 @@ typedef struct {
 
 // Represents all walls on the board
 typedef struct {
-    int horizontal[8][8];
-    int vertical[8][8];
+    int horizontal[8][9];
+    int vertical[9][8];
 } Walls;
 
 // Represents the complete game state

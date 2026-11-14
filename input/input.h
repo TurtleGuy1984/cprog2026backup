@@ -3,7 +3,8 @@
 
 typedef enum {
     MOVE,
-    PLACE_WALL
+    PLACE_WALL,
+    QUIT
 } ActionType;
 
 typedef struct {

@@ -18,7 +18,14 @@ $(TARGET): $(OBJ)
 run: $(TARGET)
 	./$(TARGET)
 
-clean:
+clear:
 	rm -f $(OBJ) $(TARGET) a *.o */*.o
 
-re: clean all
+cake:
+	@echo "          ,,,,,          "
+	@echo "         _|||||_         "
+	@echo "        |       |        "
+	@echo "      __|_______|__      "
+	@echo "     |             |     "
+	@echo "     |_____________|     "
+	@echo "   what's the occasion?  "

@@ -8,11 +8,11 @@
 
 
 void dispBoard(const Game *game) {
-    for (int row = 0; row < SIZE; row++) 
+    for (int row = 0; row < 9; row++) 
     {
 
         /* Print cells + vertical walls */
-        for (int col = 0; col < SIZE; col++) 
+        for (int col = 0; col < 9; col++) 
         {
             char cell = '.';
 
@@ -26,9 +26,9 @@ void dispBoard(const Game *game) {
 
             printf(" %c ", cell);
 
-            if (col < SIZE - 1) 
+            if (col < 8) 
             {
-                if (row < 8 && game->walls.vertical[row][col])
+                if (/*row < 8 && */game->walls.vertical[row][col])
                 {
                     printf("|");
                 }else
@@ -41,17 +41,17 @@ void dispBoard(const Game *game) {
         printf("\n");
 
         /* Print horizontal walls */
-        if (row < SIZE - 1) {
-            for (int col = 0; col < SIZE; col++) 
+        if (row < 8) {
+            for (int col = 0; col < 9; col++) 
             {
-                if (col < 8 && game->walls.horizontal[row][col])
+                if (/*col < 8 && */game->walls.horizontal[row][col])
                 {
                     printf("---");
                 }else
                 {
                     printf("   ");
                 }
-                if (col < SIZE - 1)
+                if (col < 8)
                 {
                     printf(" ");
                 }
@@ -61,7 +61,7 @@ void dispBoard(const Game *game) {
     }
 
     printf("Player 1 horizontal walls remaining: %d\n", game->players[0].walls_remainingHor);
-    printf("Player 1 vertical walls remaining: %d\n", game->players[0].walls_remainingHor);
+    printf("Player 1 vertical walls remaining: %d\n", game->players[0].walls_remainingVert);
 
     printf("Player 2 horizontal walls remaining: %d\n", game->players[1].walls_remainingHor);
     printf("Player 2 vertical walls remaining: %d\n", game->players[1].walls_remainingVert);
